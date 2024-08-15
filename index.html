@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskmaster</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Taskmaster</h1>
+
+        <!-- Search bar -->
+        <div class="input-group mb-3">
+            <input type="text" id="search-bar" class="form-control" placeholder="Search tasks...">
+        </div>
+
+        <!-- Notification Badge -->
+        <div id="notification-area">
+            <span id="notification-badge" class="notification-badge d-none"></span>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="upcomingTasksDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Upcoming Tasks
+                </button>
+                <div id="upcoming-tasks" class="dropdown-menu" aria-labelledby="upcomingTasksDropdown"></div>
+            </div>
+        </div>
+
+        <!-- Add New Task Button -->
+        <div class="text-center mb-3">
+            <button id="addTaskBtn" class="btn btn-primary">Add New Task</button>
+        </div>
+
+        <!-- Task Form -->
+        <div id="task-form" class="card">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="task-name">Task Name</label>
+                        <input type="text" id="task-name" class="form-control" placeholder="Enter task name">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority" class="form-control">
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-due-date">Due Date</label>
+                        <input type="date" id="task-due-date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-category">Category</label>
+                        <input type="text" id="task-category" class="form-control" placeholder="Enter category">
+                    </div>
+                    <button id="saveTaskBtn" type="submit" class="btn btn-success">Save Task</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <ul id="task-list" class="list-group mt-4"></ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+
+    <!-- test scripts -->
+    <script type="module" src="tests/test_storage.js"></script>
+    <script type="module" src="tests/test_task.js"></script>
+    <script type="module" src="tests/test_utils.js"></script>
+    <!-- <script type="module" src="tests/test_ui.js"></script> -->
+</body>
+</html>
